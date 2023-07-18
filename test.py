@@ -1,3 +1,7 @@
+'''Função RADIX SORT contém subfunções
+- Função para
+- Counting Sort
+'''
 def radix_sort_msd(strings, radix=256, cutoff=10):
     def key_value(string, position):
         return ord(string[position]) if position < len(string) else 0
@@ -46,6 +50,8 @@ def radix_sort_msd(strings, radix=256, cutoff=10):
     msd_radix_sort(strings, 0, len(strings) - 1, 0)
     return strings
 
-strings = ["apple", "banana", "grape", "orange", "cherry", "apricot"]
-sorted_strings = radix_sort_msd(strings)
-print(sorted_strings)
+
+if __name__ == '__main__':
+    strings = ["apple", "banana", "grape", "orange", "cherry", "apricot"]
+    sorted_strings = radix_sort_msd(strings)
+    print(sorted_strings)
