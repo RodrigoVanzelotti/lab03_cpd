@@ -3,11 +3,13 @@ from radix_sort_msd import radix_sort_letters
 from file_cleaner import read_file
 
 def contar_ocorrencias(lista_palavras):
+    # Inicia variáveis necessárias
     ocorrencias = {}
-
     palavra_anterior = None
     contador = 0
 
+    # Pra cada palavra na lista, verificar se ela é igual a anterior
+    # Se for, realize o contador, se não, apenas o mantenha
     for palavra in lista_palavras:
         if palavra != palavra_anterior:
             if palavra_anterior is not None:
@@ -17,9 +19,11 @@ def contar_ocorrencias(lista_palavras):
         else:
             contador += 1
 
+    # Se a palavra anterior existir, o item correspondente das ocorrencias é igual ao contador
     if palavra_anterior is not None:
         ocorrencias[palavra_anterior] = contador
 
+    # Retorna um dicionário de ocorrências
     return ocorrencias
 
 def ordenar_por_frequencia(dicionario_ocorrencias):
@@ -29,7 +33,7 @@ def ordenar_por_frequencia(dicionario_ocorrencias):
     # Retornar apenas as 1000 palavras mais frequentes
     return palavras_ordenadas[:1000]
 
-# Teste para verificar como estão vindo os dados
+
 texts = ['frankestein.txt', 'war_and_peace.txt']
 sorted_filenames = ['frankestein_sorted.txt', 'war_and_peace_sorted.txt']
 counted_filenames = ['frankestein_counted.txt', 'war_and_peace_counted.txt']
